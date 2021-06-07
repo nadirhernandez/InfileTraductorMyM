@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-zmf_fel_addatfel" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/zmf_fel_addatfel"/>
+        <property name="wsdl-zmf_fel_addatfel" location="xml-resources/web-service-references/zmf_fel_addatfel/wsdl/zmf_fel_addatfel.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/zmf_fel_addatfel" destdir="${build.generated.dir}/jax-wsCache/zmf_fel_addatfel" wsdl="${wsdl-zmf_fel_addatfel}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="file:/home/rene/Documentos/DahoPozos/zmf_fel_addatfel.wsdl" xnocompile="true" xendorsed="true" package="com.infile.dahop.api">
+            <depends file="${wsdl-zmf_fel_addatfel}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/zmf_fel_addatfel"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/zmf_fel_addatfel">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-zmf_fel_addatfel" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/zmf_fel_addatfel"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/infile/dahop/api"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-zmf_fel_addatfel"/>
+</project>
