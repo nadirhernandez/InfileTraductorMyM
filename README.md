@@ -1,1 +1,1 @@
-"# TraductorJava2" 
+"# InfileTraductor version MYM" 
